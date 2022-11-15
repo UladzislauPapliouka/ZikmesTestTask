@@ -1,5 +1,8 @@
 import "./SCSS/style.scss"
-
+import "@fortawesome/fontawesome-free/js/all"
+const alertIcon = document.createElement("i")
+alertIcon.classList.add("fa-solid")
+alertIcon.classList.add("fa-triangle-exclamation")
 const AlertMessage = document.createElement("div")
 AlertMessage.classList.add("alert")
 
@@ -17,7 +20,7 @@ const validationHandler = () => {
 }
 
 const sendAlertMessage =(message:string) => {
-    AlertMessage.innerText = message
+    AlertMessage.append(alertIcon,message)
     document.querySelector("body").append(AlertMessage)
     setTimeout(()=>AlertMessage.classList.toggle("active"),0)
     setTimeout(()=>AlertMessage.classList.toggle("active"),1000)

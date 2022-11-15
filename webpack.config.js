@@ -53,6 +53,13 @@ const config = {
                 test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
                 type: "asset",
             },
+            {
+                test: /\.(eot|svg|ttf|woff|woff2)$/,
+                loader: "file-loader",
+                options: {
+                    outputPath:"fonts"
+                }
+            }
 
             // Add your rules for custom modules here
             // Learn more about loaders from https://webpack.js.org/loaders/
@@ -60,6 +67,7 @@ const config = {
     },
     resolve: {
         extensions: [ ".tsx", ".ts", ".jsx", ".js", "..." ],
+        moduleDirectories: ["node_module"]
     },
 };
 
