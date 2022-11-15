@@ -1,84 +1,120 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "Arial", sans-serif;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
 }
+
+.alert {
+  position: absolute;
+  width: 300px;
+  height: 60px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  color: #FFFFFF;
+  font-size: 20px;
+  background-color: red;
+  top: -100px;
+  left: 20px;
+  transition: top 0.5s;
+  animation: dropAlert 3s linear;
+  animation-iteration-count:1;
+}
+
 #container {
-    width: 100vw;
-    height: 100vh;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  background-image: url("../../assets/background.jpg");
+  background-position: center;
+  background-size: cover;
+
+  #form-container {
+    min-width: 600px;
+    max-width: 800px;
+    min-height: 50px;
+    background: #D8D8D6;
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: 4px;
-    background-image: url("../../assets/background.jpg");
-    background-position: center;
-    background-size: cover;
+    justify-content: space-between;
+    padding: 2px 6px 2px 40px;
+    opacity: 0.6;
+    transform: skewX(-60deg);
 
-    #form-container{
-        min-width: 600px;
-        max-width: 800px;
-        min-height: 50px;
-        background: #D8D8D6;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 2px 6px 2px 40px;
-        opacity: 0.6;
-        transform: skewX(-60deg);
+    @media screen and (max-width: 500px) {
+      transform: skewX(0deg);
+      min-width: 80%;
+      padding: 2px;
+    }
 
-        @media screen and (max-width: 500px) {
+    #input {
+      flex: 2;
+      min-height: 46px;
+      outline: none;
+      background: #D8D8D6;
+      border: none;
+      opacity: 0.6;
+      transform: skewX(60deg);
+      @media screen and (max-width: 500px) {
+        transform: skewX(0deg);
+        padding-left: 20px;
+        flex: 4;
+        background: #a4a3a3;
+      }
+    }
+
+    #btn-container {
+      min-height: 46px;
+      height: 100%;
+      flex: 1;
+      position: relative;
+
+      @media screen and (max-width: 500px) {
+        transform: skewX(0deg);
+        flex: 3;
+      }
+
+      button {
+        background: #FE0000;
+        border: none;
+        width: 100%;
+        cursor: pointer;
+        min-height: inherit;
+
+        p {
+          color: #FFFFFF;
+          font-weight: 500;
+          font-size: 16px;
+          transform: skewX(60deg);
+          @media screen and (max-width: 500px) {
             transform: skewX(0deg);
-            min-width: 80%;
-            padding: 2px;
+          }
         }
-        #input {
-            flex:2;
-            min-height: 46px;
-            outline: none;
-            background: #D8D8D6;
-            border: none;
-            opacity: 0.6;
-            transform: skewX(60deg);
-            @media screen and (max-width: 500px) {
-                transform: skewX(0deg);
-                padding-left: 20px;
-                flex: 4;
-                background: #a4a3a3;
-            }
-        }
-
-        #btn-container {
-            min-height: 46px;
-            height: 100%;
-            flex: 1;
-            position: relative;
-
-            @media screen and (max-width: 500px) {
-                transform: skewX(0deg);
-                flex: 3;
-            }
-
-            button {
-                background: #FE0000;
-                border: none;
-                width: 100%;
-                cursor: pointer;
-                min-height: inherit;
-
-                p {
-                    color: #FFFFFF;
-                    font-weight: 500;
-                    font-size: 16px;
-                    transform: skewX(60deg);
-                    @media screen and (max-width: 500px) {
-                        transform: skewX(0deg);
-                    }
-                }
-            }
-
-        }
+      }
 
     }
 
+  }
+
+}
+
+@keyframes dropAlert {
+  0%{
+    top:-100px;
+  }
+  33% {
+    top: 20px;
+  }
+  66% {
+    top: 20px;
+  }
+  100% {
+    top:-100px;
+  }
 }
