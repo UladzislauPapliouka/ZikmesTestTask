@@ -28,7 +28,7 @@ const validationHandler = () => {
         } )
             .then( ( response ) => {
                 if (!response.ok) {
-                    throw new Error("Response code isn't OK")
+                    throw new Error( "Response code isn't OK" )
                 }
                 return response.json()
             } )
