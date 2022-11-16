@@ -41,11 +41,8 @@ const config = {
             {
                 test: /\.s[ac]ss$/i,
                 use: [
-                    // Creates `style` nodes from JS strings
                     stylesHandler,
-                    // Translates CSS into CommonJS
                     "css-loader",
-                    // Compiles Sass to CSS
                     "sass-loader",
                 ]
             },
@@ -67,6 +64,11 @@ const config = {
     },
     resolve: {
         extensions: [ ".tsx", ".ts", ".jsx", ".js", "..." ],
+    },
+    optimization:{
+        splitChunks: {
+            chunks: "all"
+        }
     },
 };
 

@@ -1,4 +1,23 @@
 {
+  "browserslist": {
+    "defaults": [
+      "last 2 versions",
+      "Safari >= 10",
+      "iOS >= 10",
+      "not ie <= 10",
+      "> 1%"
+    ],
+    "evergreen": [
+      "last 2 Chrome versions",
+      "last 2 ChromeAndroid versions",
+      "last 2 Firefox versions",
+      "last 2 FirefoxAndroid versions",
+      "last 2 Safari versions",
+      "last 2 iOS versions",
+      "last 2 Edge versions",
+      "last 2 Opera versions"
+    ]
+  },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^6.2.1",
     "@webpack-cli/generators": "^2.5.0",
