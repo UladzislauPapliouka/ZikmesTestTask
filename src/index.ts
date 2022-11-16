@@ -15,7 +15,7 @@ const validationHandler = () => {
     if (input.value.trim() === "") {
         Notifier.sendNotification( "Field must be filled", "error" )
     } else {
-        fetch( 'https://jsonplaceholder.typicode.com/post1s', {
+        fetch( 'https://jsonplaceholder.typicode.com/posts', {
             method: 'POST',
             body: JSON.stringify( {
                 title: `USER`,
