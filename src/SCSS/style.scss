@@ -11,21 +11,38 @@ $fa-font-path :'~@fortawesome/fontawesome-free/webfonts';
 
 .alert {
   position: absolute;
-  width: 300px;
+  min-width: 300px;
+  max-width: 300px;
   height: 60px;
-  border-radius: 16px;
+  border-radius: 4px;
+  padding: 6px 16px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   font-weight: 500;
   color: #FFFFFF;
   font-size: 20px;
-  background-color: red;
   top: -100px;
   left: 20px;
   transition: top 0.5s;
   animation: dropAlert 3s linear;
   animation-iteration-count:1;
+  & > svg {
+    margin-right: 12px;
+  }
+  & > p {
+    max-width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &.error {
+    background-color: #D32F2F;
+  }
+  &.success {
+    background-color: #2E7D32;
+  }
 }
 
 #container {
@@ -90,7 +107,7 @@ $fa-font-path :'~@fortawesome/fontawesome-free/webfonts';
         width: 100%;
         cursor: pointer;
         min-height: inherit;
-
+        outline: none;
         p {
           color: #FFFFFF;
           font-weight: 500;
