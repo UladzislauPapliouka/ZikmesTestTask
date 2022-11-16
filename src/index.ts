@@ -16,6 +16,20 @@ const validationHandler = () => {
     const input = document.querySelector("#input") as HTMLInputElement
     if(input.value.trim() === ""){
         sendAlertMessage("Field must be filled...")
+    } else {
+        fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST',
+            body: JSON.stringify({
+                title:  `USER`,
+                body: input.value,
+                userId: 1,
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+            .then((response) => response.json())
+            .then((json) => sendAlertMessage(`${json.title} — ${json.body}`))
     }
 }
 

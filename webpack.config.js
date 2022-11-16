@@ -67,7 +67,6 @@ const config = {
     },
     resolve: {
         extensions: [ ".tsx", ".ts", ".jsx", ".js", "..." ],
-        moduleDirectories: ["node_module"]
     },
 };
 
